@@ -1,19 +1,20 @@
 import "./App.css";
 import Table from "./Table";
 import flightData from "./flightData.json";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
 
-  const keys = ["origin", "destination", "origin_full_name"];
-
-  // searches each flight for user input in each specified key
-  const search = (data) => {
-    return data.filter((flight) =>
-      keys.some((key) => flight[key].toLowerCase().includes(query))
-    );
-  };
+  useEffect(() => {
+    const fetchFlights = async () => {
+      const res = await axios.get(`http://localhost:5000?q=${query}`);
+      setData(res.data);
+    };
+    fetchFlights();
+  }, [query]);
 
   return (
     <div className="App">
@@ -22,7 +23,7 @@ function App() {
         placeholder="Enter origin or destination..."
         onChange={(e) => setQuery(e.target.value)}
       />
-      <Table data={search(flightData)} />
+      <Table data={data} />
     </div>
   );
 }
