@@ -7,12 +7,14 @@ const Table = ({ data }) => {
         <tr>
           <th>Origin</th>
           <th>Destination</th>
-          <th>Full Name</th>
+          <th>Origin Full Name</th>
+          <th>Destination Full Name</th>
         </tr>
         {data.map((flight) => (
           <tr key={flight.id}>
             <td>{flight.origin}</td>
             <td>{flight.destination}</td>
+            <td>{flight.origin_full_name}</td>
             <td>{flight.origin_full_name}</td>
           </tr>
         ))}

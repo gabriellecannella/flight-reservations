@@ -8,7 +8,12 @@ app.use(cors());
 app.get("/", (req, res) => {
   const { q } = req.query;
 
-  const keys = ["origin", "destination", "origin_full_name"];
+  const keys = [
+    "origin",
+    "destination",
+    "origin_full_name",
+    "destination_full_name",
+  ];
 
   const search = (data) => {
     return data.filter((flight) =>

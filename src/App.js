@@ -1,8 +1,11 @@
 import "./App.css";
 import Table from "./Table";
-import flightData from "./flightData.json";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { MuiHeader } from "./components/MiHeader.tsx";
+import { MuiButton } from "./components/MuiButton.tsx";
+import { MuiTextField } from "./components/MuiTextField.tsx";
+//import { MuiTypography } from "./components/MuiTypography.tsx";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -18,6 +21,9 @@ function App() {
 
   return (
     <div className="App">
+      <MuiHeader />
+      <MuiButton />
+      <MuiTextField />
       <input
         type="text"
         placeholder="Enter origin or destination..."
