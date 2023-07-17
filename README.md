@@ -44,3 +44,8 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## BUGS to fix
+
+search function currently will show results for anything where user input is included in the full name or origin.
+ex: user inputs 'atl' and "Ronald Reagan Washington Natl" will appear due to 'ATL" at the end
