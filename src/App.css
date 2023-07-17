@@ -8,11 +8,12 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
   height: 100vh;
-  background-color: #aabfcc;
   background-image: url("./components/world_map.png");
-  /* background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%); */
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;
 }
 
  .App {
@@ -30,11 +31,84 @@ body {
   font-size: 20px;
 }
 
- .Table {
+  .Table {
   padding: 10px;
   padding-top: 10px;
   list-style: georgian;
   text-align: center;
+} 
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3 px solid rgb(37, 99, 99);
+  text-align: left;
+}
+
+.has-details {
+  position: relative;
+}
+
+.details {
+  position: absolute;
+  top: 0;
+  transform: translateY(70%) scale(0);
+  transition: transform 0.1s ease-in;
+  transform-origin: left;
+  display: inline;
+  background: white;
+  z-index: 20;
+  min-width: 100%;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+.has-details:hover span {
+  transform: translateY(70%) scale(1);
+}
+
+
+tbody td {
+  text-align: left;
+}
+
+thead th:nth-child(1){
+  width: 30%;
+}
+
+thead th:nth-child(1){
+  width: 20%;
+}
+
+thead th:nth-child(1){
+  width: 15%;
+}
+
+thead th:nth-child(1){
+  width: 35%;
+}
+
+th,td {
+  padding: 10px;
+} 
+
+tbody tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e0e0e0;
+}
+
+caption {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #171313;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
  .App input {
