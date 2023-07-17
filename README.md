@@ -11,6 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Open folder in code editor
 
 3) If first time running, type `npm install` in my-flightapp folder
+   - if "npm" is not a recongnized command download Node.js here: https://nodejs.org/en
 
 3. run `npm start` in my-flightapp folder
 
