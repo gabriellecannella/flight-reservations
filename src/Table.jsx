@@ -15,12 +15,12 @@ const Table = ({ data }) => {
       <tbody>
         {data.map((flight) => (
           <tr key={flight.id}>
-            <td class="has-details">
+            <td className="has-details">
               {flight.origin}
-              <span class="details">
+              <span className="details">
                 Flight Number: {flight.flt_num}
-                <br></br> Departure Gate: {flight.scheduled_origin_gate} Arrival
-                Gate: {flight.scheduled_destination_gate}{" "}
+                <br></br> Departure Gate: {flight.scheduled_origin_gate}{" "}
+                <br></br> Arrival Gate: {flight.scheduled_destination_gate}{" "}
               </span>
             </td>
             <td>{flight.destination}</td>

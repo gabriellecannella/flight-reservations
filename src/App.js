@@ -8,7 +8,7 @@ import { MuiTextField } from "./components/MuiTextField.tsx";
 //import { MuiTypography } from "./components/MuiTypography.tsx";
 
 function App() {
-  const [query, setQuery] = useState(["null_orgin", "null_dest"]);
+  const [query, setQuery] = useState(["orgin", "null_dest"]);
   console.log(query);
   //const [orgin, setOrgin] = useState("");
   //const [dest = setDest] = useState("");

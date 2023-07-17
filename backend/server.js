@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
   const search = (data) => {
     return data.filter((flight) => {
       if (
+        //both seacrh bars have user input
         query[0] &&
         query[1] &&
         query[0] != "null_origin" &&
@@ -41,13 +42,22 @@ app.get("/", (req, res) => {
           keys_dest.some((key) => flight[key].toLowerCase().includes(query[1]))
         );
       } else if (
+        //Origin search bar has user input
         query[0] &&
         query[0] != "null_origin" &&
         (query[1] == "" || query[1] == "null_dest")
       ) {
-        console.log("here!");
         return keys_origin.some((key) =>
           flight[key].toLowerCase().includes(query[0])
+        );
+      } else if (
+        // Destination search bar has user input
+        query[1] &&
+        query[1] != "null_origin" &&
+        (query[0] == "" || query[0] == "null_dest")
+      ) {
+        return keys_dest.some((key) =>
+          flight[key].toLowerCase().includes(query[1])
         );
       }
     });
